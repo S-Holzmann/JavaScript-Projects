@@ -1,4 +1,6 @@
+// Function to get the number of sleep hours for a given day
 const getSleepHours = day => {
+  // Switch statement to determine the sleep hours based on the input day
   switch(day) {
     case 'monday':
       return 6;
@@ -26,6 +28,7 @@ const getSleepHours = day => {
   }
 };
 
+// Function to get the total actual sleep hours for the entire week
 const getActualSleepHours = () => {
   return getSleepHours('monday') + 
     getSleepHours('tuesday') +
@@ -36,11 +39,13 @@ const getActualSleepHours = () => {
     getSleepHours('sunday');
 }
 
+// Function to get the ideal sleep hours for the entire week
 const getIdealSleepHours = () => {
   const idealHours = 7.5;
   return idealHours * 7;
 }
 
+// Function to calculate sleep debt based on actual and ideal sleep hours
 const calculateSleepDebt = () => {
   const actualSleepHours = getActualSleepHours();
   const idealSleepHours = getIdealSleepHours();
@@ -53,4 +58,4 @@ const calculateSleepDebt = () => {
   }
 }
 
-calculateSleepDebt();
+calculateSleepDebt(); // Call the function to calculate sleep debt
